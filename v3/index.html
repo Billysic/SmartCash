@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UpCash V1 - Final</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="max-w-md mx-auto pb-24">
+
+    <div class="flex justify-between px-6 py-4 text-[9px] text-cyan-500 font-mono">
+        <span>● ENCRYPTED_SESSION</span>
+        <span>CLOUD_SYNC_READY ☁️</span>
+    </div>
+
+    <main class="px-6 min-h-screen">
+        <section id="aba1" class="tab-content active-tab">
+            <div onclick="changeTab('aba4')" class="gradient-card p-6 rounded-[2.5rem] mb-8 shadow-lg shadow-cyan-500/20 cursor-pointer active:scale-95 transition-all">
+                <p class="text-xs font-bold text-white/70 uppercase tracking-wider">Saldo (Toque p/ Gerenciar)</p>
+                <h2 class="text-4xl font-black mt-1 text-white">R$ 1.850,00</h2>
+                <div class="mt-4 flex gap-2">
+                    <span class="bg-white/20 px-3 py-1 rounded-full text-[10px] font-bold">Nível 4</span>
+                </div>
+            </div>
+
+            <h2 class="text-xl font-black mb-4 uppercase text-cyan-400">Educação</h2>
+            <div class="space-y-4">
+                <div class="glass p-4 flex gap-4 items-center cursor-pointer hover:bg-white/10">
+                    <div class="text-2xl">📽️</div>
+                    <p class="text-sm font-bold">Tutorial: Investindo do Zero</p>
+                </div>
+                <div class="glass p-4 border-l-4 border-purple-500 flex justify-between items-center">
+                    <p class="text-sm font-bold italic">Mentoria VIP</p>
+                    <button class="bg-purple-600 px-3 py-1 rounded-full text-[10px] font-bold">Ver Agenda</button>
+                </div>
+            </div>
+        </section>
+
+        <section id="aba2" class="tab-content">
+            <h2 class="text-xl font-black mb-4 uppercase text-cyan-400">Patrimônio</h2>
+            <div class="glass p-6 mb-6">
+                <p class="text-xs text-gray-400 mb-2 font-bold uppercase">Configurar Mesada/Salário</p>
+                <div class="flex gap-2">
+                    <input type="number" id="input-mesada" value="1850" class="bg-white/5 border border-white/10 rounded-xl p-3 w-full text-xl font-bold outline-none focus:border-cyan-500">
+                </div>
+            </div>
+
+            <h3 class="font-bold mb-4 text-sm uppercase">Minhas Metas</h3>
+            <div class="glass p-5 border-b-4 border-cyan-500">
+                <div class="flex justify-between mb-2">
+                    <span class="text-sm font-bold">🎮 Console Novo</span>
+                    <span class="text-sm font-bold text-cyan-400">45%</span>
+                </div>
+                <div class="w-full bg-white/10 h-2 rounded-full overflow-hidden">
+                    <div class="bg-cyan-500 h-full" style="width: 45%"></div>
+                </div>
+            </div>
+        </section>
+
+        <section id="aba3" class="tab-content">
+            <h2 class="text-xl font-black mb-4 uppercase text-cyan-400">Laboratório</h2>
+            <div class="glass p-6 mb-6">
+                <h3 class="font-bold text-sm mb-4">Simulador de Futuro</h3>
+                <input type="range" id="sim-slider" min="50" max="2000" step="50" value="300" class="w-full h-1 bg-gray-700 rounded-lg appearance-none cursor-pointer accent-cyan-400">
+                <div class="h-32 mt-4">
+                    <canvas id="simChart"></canvas>
+                </div>
+                <p id="sim-res" class="text-xl font-black text-green-400 mt-2 text-center">R$ 3.840,00 (12 meses)</p>
+            </div>
+
+            <h3 class="font-bold mb-4 text-sm uppercase">Desafio Semanal: Consistência</h3>
+            <div class="glass p-4">
+                <div id="habit-grid" class="grid grid-cols-7 gap-2">
+                    </div>
+                <p class="text-[9px] text-gray-500 mt-3 text-center uppercase font-bold">Destaque: 5 dias seguidos sem gastos extras!</p>
+            </div>
+        </section>
+
+        <section id="aba4" class="tab-content">
+            <h2 class="text-xl font-black mb-4 uppercase text-cyan-400">Gestão</h2>
+            <div class="grid grid-cols-2 gap-4 mb-6">
+                <div class="glass p-4 border-t-2 border-green-500">
+                    <p class="text-[10px] text-gray-400 uppercase font-bold">Receita</p>
+                    <p class="text-lg font-bold text-green-400">R$ 2.500</p>
+                </div>
+                <div class="glass p-4 border-t-2 border-red-500">
+                    <p class="text-[10px] text-gray-400 uppercase font-bold">Despesa</p>
+                    <p class="text-lg font-bold text-red-400">R$ 650</p>
+                </div>
+            </div>
+
+            <div class="glass p-6 h-64 mb-6">
+                <canvas id="chartV1"></canvas>
+            </div>
+
+            <div class="glass p-6 border-2 border-dashed border-green-500/40 bg-green-500/5">
+                <p class="text-[10px] font-bold text-green-500 uppercase">Economia Potencial</p>
+                <h3 class="text-xl font-bold">Total: + R$ 340,50</h3>
+                <p class="text-xs text-gray-400 mt-1 italic">Economia se você bater todos os desafios deste mês.</p>
+            </div>
+        </section>
+    </main>
+
+    <nav class="fixed bottom-0 left-0 right-0 bg-[#0d1117]/95 backdrop-blur-md border-t border-white/10 flex justify-around items-center h-20 px-2 z-50">
+        <button onclick="changeTab('aba1')" class="nav-item flex-1 text-center py-2 nav-active" id="btn-aba1">
+            <p class="text-xl">🏠</p><p class="text-[8px] font-bold uppercase">Home</p>
+        </button>
+        <button onclick="changeTab('aba2')" class="nav-item flex-1 text-center py-2 text-gray-500" id="btn-aba2">
+            <p class="text-xl">💰</p><p class="text-[8px] font-bold uppercase">Carteira</p>
+        </button>
+        <button onclick="changeTab('aba3')" class="nav-item flex-1 text-center py-2 text-gray-500" id="btn-aba3">
+            <p class="text-xl">🚀</p><p class="text-[8px] font-bold uppercase">Labs</p>
+        </button>
+        <button onclick="changeTab('aba4')" class="nav-item flex-1 text-center py-2 text-gray-500" id="btn-aba4">
+            <p class="text-xl">📊</p><p class="text-[8px] font-bold uppercase">Gestão</p>
+        </button>
+    </nav>
+
+    <script src="script.js"></script>
+</body>
+</html>

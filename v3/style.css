@@ -1,0 +1,18 @@
+body { background: #080a0c; color: #fff; font-family: 'Inter', sans-serif; overflow-x: hidden; }
+.tab-content { display: none; }
+.active-tab { display: block; animation: slideUp 0.3s ease-out; }
+
+.glass { 
+    background: rgba(255, 255, 255, 0.05); 
+    border: 1px solid rgba(255, 255, 255, 0.1); 
+    border-radius: 20px; 
+}
+
+.nav-active { color: #00f2ff !important; border-top: 2px solid #00f2ff; }
+.gradient-card { background: linear-gradient(135deg, #00f2ff 0%, #7000ff 100%); }
+
+@keyframes slideUp { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+
+.habit-day { width: 100%; aspect-ratio: 1; border-radius: 4px; }
+.habit-on { background: #00f2ff; box-shadow: 0 0 10px rgba(0, 242, 255, 0.3); }
+.habit-off { background: rgba(255, 255, 255, 0.05); }
