@@ -15,27 +15,34 @@
         <span>CLOUD_SYNC_READY ☁️</span>
     </div>
 
-    <main class="px-6 min-h-screen">
+    <main class="px-6 m in-h-screen">
         <section id="aba1" class="tab-content active-tab">
             <div onclick="changeTab('aba4')" class="gradient-card p-6 rounded-[2.5rem] mb-8 shadow-lg shadow-cyan-500/20 cursor-pointer active:scale-95 transition-all">
                 <p class="text-xs font-bold text-white/70 uppercase tracking-wider">Saldo (Toque p/ Gerenciar)</p>
                 <h2 class="text-4xl font-black mt-1 text-white">R$ 1.850,00</h2>
-                <div class="mt-4 flex gap-2">
+                </div>
                     <span class="bg-white/20 px-3 py-1 rounded-full text-[10px] font-bold">Nível 4</span>
                 </div>
             </div>
 
             <h2 class="text-xl font-black mb-4 uppercase text-cyan-400">Educação</h2>
             <div class="space-y-4">
-                <div class="glass p-4 flex gap-4 items-center cursor-pointer hover:bg-white/10">
+                <div onclick="changeTab('aba5')" class="glass p-4 flex gap-4 items-center cursor-pointer hover:border-cyan-500 transition-all">
                     <div class="text-2xl">📽️</div>
-                    <p class="text-sm font-bold">Tutorial: Investindo do Zero</p>
+                    <div>
+                        <p class="text-sm font-bold">Tutoriais de Investimento</p>
+                        <p class="text-[10px] text-cyan-500 uppercase font-bold">Acessar Academy</p>
+                    </div>
                 </div>
-                <div class="glass p-4 border-l-4 border-purple-500 flex justify-between items-center">
-                    <p class="text-sm font-bold italic">Mentoria VIP</p>
-                    <button class="bg-purple-600 px-3 py-1 rounded-full text-[10px] font-bold">Ver Agenda</button>
+
+                <div onclick="changeTab('aba5')" class="glass p-4 border-l-4 border-purple-500 flex justify-between items-center cursor-pointer hover:bg-purple-500/10 transition-all">
+                    <div>
+                        <p class="text-sm font-bold italic">Mentorias Especializadas</p>
+                        <p class="text-[10px] text-gray-400">Agende seu horário</p>
+                    </div>
+                    <span class="text-purple-500">➡️</span>
                 </div>
-            </div>
+            </div>        
         </section>
 
         <section id="aba2" class="tab-content">
@@ -101,6 +108,31 @@
                 <p class="text-xs text-gray-400 mt-1 italic">Economia se você bater todos os desafios deste mês.</p>
             </div>
         </section>
+
+        <section id="aba5" class="tab-content">
+            <div class="flex items-center gap-4 mb-6">
+                <button onclick="changeTab('aba1')" class="text-gray-400 text-xs font-bold uppercase tracking-widest">← Voltar</button>
+                <h2 class="text-xl font-black uppercase text-cyan-400">Academy</h2>
+            </div>
+
+            <h3 class="font-bold mb-4 text-sm text-gray-500 uppercase">Aulas e Tutoriais</h3>
+            <div class="space-y-3 mb-8">
+                <div class="glass p-4 bg-gradient-to-r from-cyan-500/10 to-transparent">
+                    <p class="text-xs font-bold">Introdução ao Mercado Financeiro</p>
+                    <button class="mt-2 text-[9px] bg-cyan-600 px-3 py-1 rounded-full font-bold">ASSISTIR AGORA</button>
+                </div>
+                <div class="glass p-4 opacity-60">
+                    <p class="text-xs font-bold">Como analisar uma Empresa 🔒</p>
+                </div>
+            </div>
+
+    <h3 class="font-bold mb-4 text-sm text-gray-500 uppercase">Mentorias</h3>
+    <div class="glass p-6 border-2 border-dashed border-purple-500/30 text-center">
+        <p class="text-sm font-bold text-purple-300 mb-2">Sessão Individual</p>
+        <p class="text-[10px] text-gray-400 mb-4">Fale com um mentor para ajustar sua estratégia.</p>
+        <button class="w-full bg-purple-600 py-3 rounded-2xl text-xs font-bold uppercase shadow-lg shadow-purple-500/20">Solicitar Agendamento</button>
+    </div>
+</section>
     </main>
 
     <nav class="fixed bottom-0 left-0 right-0 bg-[#0d1117]/95 backdrop-blur-md border-t border-white/10 flex justify-around items-center h-20 px-2 z-50">
